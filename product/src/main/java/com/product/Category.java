@@ -1,73 +1,80 @@
 package com.product;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Category{
-    // atributos de la clase category
-    Integer category_id;
-    String  category;
-    String  tag;
-    Integer status;
-    static ArrayList<Category> categoriesArray = new ArrayList<>();
+public class Category {
 
-    //constructor por parametros 
-    public Category(Integer category_id, String category, String tag, Integer status){
+    private Integer category_id;
+    private String category;
+    private String tag;
+    private Integer status;
+
+    // Lista estática para simular persistencia en memoria
+    private static List<Category> categoriesArray = new ArrayList<>();
+
+    // Constructor vacío
+    public Category() {
+    }
+
+    // Constructor por parámetros
+    public Category(Integer category_id, String category, String tag, Integer status) {
         this.category_id = category_id;
         this.category = category;
         this.tag = tag;
-        this.status = status;   
-
-        if(checkCategories()){
+        this.status = status;
+        
+        // Lógica de validación antes de agregar a la lista
+        if (checkCategories()) {
             categoriesArray.add(this);
-        }else{System.out.println("ese ID, categoria o tag ya existe. No se pueden agregar repetidos");}        
-    }
-    
-    // constructor vacio
-    public Category(){
-        return;
+        } else {
+            System.out.println("Error: El ID, categoría o tag ya existe.");
+        }
     }
 
-
-    // función para verificar que el category_id, category y tag deben ser únicos
-    // regresa un booleano true en caso de que no exista ningun atributo igual.
-    public boolean checkCategories(){
-        for(Category categoryAux : categoriesArray){
-            if(categoryAux.category_id.equals(this.category_id)){
-                return false;
-            }
-            if(categoryAux.category.equals(this.category)){
-                return false;
-            }
-            if(categoryAux.tag.equals(this.tag)){
+    public boolean checkCategories() {
+        for (Category aux : categoriesArray) {
+            if (aux.category_id.equals(this.category_id) || 
+                aux.category.equalsIgnoreCase(this.category) || 
+                aux.tag.equalsIgnoreCase(this.tag)) {
                 return false;
             }
         }
         return true;
     }
 
-    // funcion que muestra en consola una lista con las categorías registradas con status 1
-    //ejemplo: [{1,”Lentes”,”Lts”,1}, {2, “Relojes”, “Rljs”,1}]        
-    public void getCategories(){
-        if(categoriesArray.isEmpty()){
+    public static void getCategories() {
+        if (categoriesArray.isEmpty()) {
             System.out.println("No existen categorías registradas");
-            return;            
+            return;
         }
 
-        System.out.print("[");
-        for(Category categoryAux : categoriesArray){
-            if(categoryAux.status == 1){
-                System.out.print("{"+categoryAux.category_id + "," + categoryAux.category + "," + categoryAux.tag + "," + categoryAux.status+"},");                
+        StringBuilder sb = new StringBuilder("[");
+        for (Category aux : categoriesArray) {
+            if (aux.status != null && aux.status == 1) {
+                sb.append(String.format("{%d, \"%s\", \"%s\", %d}, ", 
+                    aux.category_id, aux.category, aux.tag, aux.status));
             }
         }
-        System.out.println("]");
+        
+        if (sb.length() > 1) {
+            sb.setLength(sb.length() - 2); // Quitar la última coma
+        }
+        sb.append("]");
+        System.out.println(sb.toString());
     }
 
-    // funcion que elimina una categoria id
-    public void deleteCategory(Integer category_id){
-        for(int i=0;i<categoriesArray.size();i++){
-            if(categoriesArray.get(i).category_id.equals(category_id)){
-                categoriesArray.remove(i);
-            }
-        }
-    }    
+    public static void deleteCategory(Integer id) {
+        categoriesArray.removeIf(c -> c.category_id.equals(id));
+    }
+
+    // Getters y Setters
+    public Integer getCategory_id() { return category_id; }
+    public void setCategory_id(Integer category_id) { this.category_id = category_id; }
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
+    public String getTag() { return tag; }
+    public void setTag(String tag) { this.tag = tag; }
+    public Integer getStatus() { return status; }
+    public void setStatus(Integer status) { this.status = status; }
 }
