@@ -55,18 +55,20 @@ public class CtrlCategory {
     }
 
 	@PatchMapping("/{id}/enable")
-	public ResponseEntity<Void> enable(@PathVariable Integer id){
+	public ResponseEntity<String> enable(@PathVariable Integer id){
 		svc.enable(id);
 		System.out.println("ID: "+id);
-		return ResponseEntity.ok().build();
+		return ResponseEntity.ok().body("Categoría activada");
 	}
 
 	@PatchMapping("/{id}/disable")
-	public ResponseEntity<Void> disable(@PathVariable Integer id){
+	public ResponseEntity<String> disable(@PathVariable Integer id){
 		svc.disable(id);
 		System.out.println("ID: "+id);
-		return ResponseEntity.ok().build();
+		return ResponseEntity.ok("Categoría desactivada.");
 	}
+
+
 
 	
 }

@@ -28,13 +28,7 @@ public interface RepoCategory extends JpaRepository<Category, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE category SET status=:status WHERE category_id=:id", nativeQuery = true)
-    void updateCategoryStatus(@Param("category_id") Integer id, @Param("status") Integer status);
+    @Query(value = "UPDATE category SET status=:status WHERE category_id=:category_id", nativeQuery = true)
+    void updateCategoryStatus(@Param("category_id") Integer category_id, @Param("status") Integer status);
 	
-
-
-
-	//void updateCategoryStatus(Integer id, int i);
-	// @Query(value="SELECT * FROM category ORDER BY category", nativeQuery=true)
-	// List<Category> getCategories();
 }

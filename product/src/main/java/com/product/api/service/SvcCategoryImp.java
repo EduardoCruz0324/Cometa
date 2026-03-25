@@ -53,12 +53,24 @@ public class SvcCategoryImp implements SvcCategory{
     @Override
     public void update(DtoCategoryIn in, Integer id){
         try{
-            validateCategoryId(id);
-            repo.updateCategoryStatus(id,1);            
+            Category category = repo.findById(id)
+                .orElseThrow(() -> new ApiException(HttpStatus.NOT_FOUND, "El id de la categoria no existe"));
+            
+            category.setCategory(in.getCategory());
+            category.setTag(in.getTag());
+            
+            repo.save(category);
+
         }catch(DataAccessException e){
+            if(e.getLocalizedMessage().contains("category.category"))
+                throw new ApiException(HttpStatus.CONFLICT,"El nombre de la categoria ya esta registrado");
+            if(e.getLocalizedMessage().contains("ux_tag"))
+                throw new ApiException(HttpStatus.CONFLICT,"El tag de la categoria ya esta registrado");
+
             throw new DBAccessException(e);
         }
     }
+
 
     @Override
     public void enable(Integer id){
