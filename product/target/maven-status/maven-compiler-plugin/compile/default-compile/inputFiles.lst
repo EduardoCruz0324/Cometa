@@ -1,0 +1,11 @@
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/ProductApplication.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/controller/CtrlCategory.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/dto/DtoCategoryIn.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/entity/Category.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/repository/RepoCategory.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/service/SvcCategory.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/service/SvcCategoryImp.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/exception/ApiException.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/exception/DBAccessException.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/exception/ExceptionResponse.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/exception/RestExceptionHandler.java

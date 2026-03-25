@@ -1,0 +1,5 @@
+com/product/api/service/SvcCategory.class
+com/product/api/service/SvcCategoryImp.class
+com/product/api/entity/Category.class
+com/product/api/repository/RepoCategory.class
+com/product/api/controller/CtrlCategory.class
