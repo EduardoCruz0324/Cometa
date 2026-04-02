@@ -2,19 +2,34 @@ package com.product.api.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name="category")
 public class Category {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Recomendado para IDs
-    private Integer category_id;
+    //nombre de la var de salida
+    @JsonProperty("category_id")
+    //nombre de la columna con la que se mapea
+    @Column(name = "category_id")
+    private Integer category_id;  
     
+    @JsonProperty("category")    
+    @Column(name = "category")
     private String category;
+    
+    @JsonProperty("tag")    
+    @Column(name = "tag")
     private String tag;
+    
+    @JsonProperty("status")    
+    @Column(name = "status")    
     private Integer status;
+              
 
     // Se cambió a List y se inicializa aquí
     private static List<Category> categoriesArray = new ArrayList<>();
