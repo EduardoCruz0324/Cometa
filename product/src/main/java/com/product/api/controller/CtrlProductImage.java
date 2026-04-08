@@ -3,32 +3,38 @@ package com.product.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.product.api.dto.in.DtoProductImageIn;
 import com.product.api.entity.ProductImage;
 import com.product.api.service.SvcProductImage;
 
 @RestController
-@RequestMapping("/product/{id}/image")
+@RequestMapping("/product")
 public class CtrlProductImage {
 
     @Autowired
     private SvcProductImage service;
 
-    @GetMapping
-    public List<ProductImage> getImages(@PathVariable Integer id) {
-        return service.getByProduct(id);
+    // GET imágenes de un producto
+    @GetMapping("/{id}/image")
+    public ResponseEntity<List<ProductImage>> getImages(@PathVariable Integer id) {
+        return ResponseEntity.ok(service.getByProduct(id));
     }
 
-    @PostMapping
-    public String create(@PathVariable Integer id, @RequestBody ProductImage body) {
-        service.create(id, body.getImage());
-        return "La imagen ha sido registrada";
+    // POST agregar imagen
+    @PostMapping("/{id}/image")
+    public ResponseEntity<String> create(@PathVariable Integer id,
+                                         @RequestBody DtoProductImageIn in) {
+        service.create(id, in);
+        return ResponseEntity.ok("La imagen ha sido registrada");
     }
 
-    @DeleteMapping("/{imageId}")
-    public String delete(@PathVariable Long imageId) {
+    // DELETE imagen
+    @DeleteMapping("/{id}/image/{imageId}")
+    public ResponseEntity<String> delete(@PathVariable Long imageId) {
         service.delete(imageId);
-        return "La imagen ha sido eliminada";
+        return ResponseEntity.ok("La imagen ha sido eliminada");
     }
 }

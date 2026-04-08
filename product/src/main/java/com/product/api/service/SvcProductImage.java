@@ -1,6 +1,8 @@
 package com.product.api.service;
 
 import java.util.List;
+
+import com.product.api.dto.in.DtoProductImageIn;
 import com.product.api.entity.ProductImage;
 
 public interface SvcProductImage {
@@ -10,4 +12,6 @@ public interface SvcProductImage {
     List<ProductImage> getByProduct(Integer productId);
     
     void delete(Long imageId);
+
+    void create(Integer productId, DtoProductImageIn in);
 }

@@ -2,13 +2,9 @@ package com.product.api.service;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
-
 //import com.product.api.controller.DtoCategoryIn;
 import com.product.api.dto.DtoCategoryIn;
 import com.product.api.entity.Category;
-
-import jakarta.validation.Valid;
 
 public interface SvcCategory {
 	// muestra la lista de categorias resgistradas []
