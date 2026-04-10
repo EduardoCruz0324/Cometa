@@ -19,6 +19,9 @@ public class DtoProductListOut {
 	@JsonProperty("status")
 	private Integer status;
 
+	@JsonProperty("images")
+	private String[] images;
+
 	public DtoProductListOut(Integer product_id, String gtin, String product, Float price, Integer status) {
 		super();
 		this.product_id = product_id;
@@ -66,6 +69,14 @@ public class DtoProductListOut {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+
+	public String[] getImages() {
+		return images;
+	}
+
+	public void setImages(String[] images) {
+		this.images = images;
 	}
 
 }

@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 
 import com.product.api.dto.in.DtoProductIn;
 import com.product.api.dto.out.DtoProductListOut;
-
 public interface SvcProduct {
 
 	public ResponseEntity<List<DtoProductListOut>> getProducts();

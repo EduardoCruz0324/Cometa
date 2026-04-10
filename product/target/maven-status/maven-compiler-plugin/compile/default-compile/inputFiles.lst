@@ -3,6 +3,7 @@
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/controller/CtrlProduct.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/controller/CtrlProductImage.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/dto/DtoCategoryIn.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/dto/DtoProductImage.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/dto/in/DtoProductImageIn.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/dto/in/DtoProductIn.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/dto/out/DtoProductListOut.java

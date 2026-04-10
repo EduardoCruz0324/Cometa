@@ -1,11 +1,12 @@
-package com.product.api.dto.in;
+package com.product.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 
-public class DtoProductImageIn {
+public class DtoProductImage {
 
     @JsonProperty("product_id")
+    @NotNull(message = "El product_id es obligatorio")
     private Integer productId;
 
     @JsonProperty("image")
