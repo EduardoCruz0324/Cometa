@@ -23,6 +23,7 @@
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/common/mapper/MapperProduct.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/config/jwt/JwtAuthFilter.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/config/jwt/JwtUtil.java
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/config/openapi/CustomOpenAPI.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/config/security/CorsConfig.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/config/security/SecurityConfig.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/exception/ApiException.java
