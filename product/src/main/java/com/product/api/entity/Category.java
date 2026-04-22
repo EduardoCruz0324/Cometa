@@ -4,30 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import jakarta.persistence.*;
 
+@Schema(description = "Categoría de productos")
 @Entity
 @Table(name="category")
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Recomendado para IDs
-    //nombre de la var de salida
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "ID de la categoría", example = "1")
     @JsonProperty("category_id")
-    //nombre de la columna con la que se mapea
     @Column(name = "category_id")
-    private Integer category_id;  
-    
-    @JsonProperty("category")    
+    private Integer category_id;
+
+    @Schema(description = "Nombre de la categoría", example = "Electrónica")
+    @JsonProperty("category")
     @Column(name = "category")
     private String category;
-    
-    @JsonProperty("tag")    
+
+    @Schema(description = "Etiqueta corta de la categoría", example = "electronica")
+    @JsonProperty("tag")
     @Column(name = "tag")
     private String tag;
-    
-    @JsonProperty("status")    
-    @Column(name = "status")    
+
+    @Schema(description = "Estatus de la categoría (1=activo, 0=inactivo)", example = "1")
+    @JsonProperty("status")
+    @Column(name = "status")
     private Integer status;
               
 

@@ -1,24 +1,32 @@
 package com.product.api.dto.out;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
+@Schema(description = "Datos de salida de un producto")
 public class DtoProductListOut {
-	
+
+	@Schema(description = "ID del producto", example = "1")
 	@JsonProperty("product_id")
 	private Integer product_id;
-	
+
+	@Schema(description = "Código GTIN/EAN del producto", example = "7501234567890")
 	@JsonProperty("gtin")
 	private String gtin;
 
+	@Schema(description = "Nombre del producto", example = "Laptop Lenovo IdeaPad")
 	@JsonProperty("product")
 	private String product;
 
+	@Schema(description = "Precio del producto", example = "12999.99")
 	@JsonProperty("price")
 	private Float price;
 
+	@Schema(description = "Estatus del producto (1=activo, 0=inactivo)", example = "1")
 	@JsonProperty("status")
 	private Integer status;
 
+	@Schema(description = "Imágenes del producto en Base64")
 	@JsonProperty("images")
 	private String[] images;
 

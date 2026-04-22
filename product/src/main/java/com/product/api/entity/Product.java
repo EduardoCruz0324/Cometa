@@ -1,5 +1,6 @@
 package com.product.api.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,33 +12,42 @@ import jakarta.persistence.Table;
 
 import java.util.List;
 
+@Schema(description = "Producto de la tienda")
 @Entity
 @Table(name = "product")
 public class Product {
-	
+
+	@Schema(description = "ID del producto", example = "1")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "product_id")
 	private Integer productId;
-	
+
+	@Schema(description = "Código GTIN/EAN del producto", example = "7501234567890")
 	@Column(name = "gtin")
 	private String gtin;
 
+	@Schema(description = "Nombre del producto", example = "Laptop Lenovo IdeaPad")
 	@Column(name = "product_name")
 	private String product_name;
 
+	@Schema(description = "Descripción del producto", example = "Laptop 15.6 pulgadas, 16GB RAM, 512GB SSD")
 	@Column(name = "description")
 	private String description;
 
+	@Schema(description = "Precio del producto", example = "12999.99")
 	@Column(name = "price")
 	private Float price;
 
+	@Schema(description = "Cantidad en existencia", example = "50")
 	@Column(name = "stock")
 	private Integer stock;
 
+	@Schema(description = "ID de la categoría", example = "1")
 	@Column(name = "category_id")
 	private Integer category_id;
 
+	@Schema(description = "Estatus del producto (1=activo, 0=inactivo)", example = "1")
 	@Column(name = "status")
 	private Integer status;
 
@@ -106,6 +116,7 @@ public class Product {
 		this.status = status;
 	}
 
+	@com.fasterxml.jackson.annotation.JsonIgnore
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	private List<ProductImage> images;
 

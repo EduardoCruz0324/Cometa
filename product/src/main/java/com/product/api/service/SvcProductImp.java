@@ -93,7 +93,9 @@ public class SvcProductImp implements SvcProduct{
 	public ResponseEntity<String> updateProduct(Integer id, DtoProductIn in) {
 		try {
 			validateProductId(id);
+			Integer currentStatus = repo.findById(id).get().getStatus();
 			Product product = mapper.fromDto(id, in);
+			product.setStatus(currentStatus);
 			repo.save(product);
 			return new ResponseEntity<>("El producto ha sido actualizado", HttpStatus.OK);
 		}catch (DataAccessException e) {

@@ -1,22 +1,28 @@
 package com.product.api.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
+@Schema(description = "Imagen asociada a un producto")
 @Entity
 @Table(name = "product_image")
 public class ProductImage {
 
+    @Schema(description = "ID de la imagen", example = "1")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_image_id")
     private Integer productImageId;
 
+    @Schema(description = "Ruta de la imagen almacenada en el servidor", example = "/uploads/img/product/6fdf9718-38f1-4c45-a356-79184a0aff60.png")
     @Column(name = "image")
     private String image;
 
+    @Schema(description = "Estatus de la imagen (1=activo, 0=inactivo)", example = "1")
     @Column(name = "status")
     private Integer status;
 
+    @Schema(hidden = true)
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;

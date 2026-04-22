@@ -42,12 +42,12 @@ public class SvcCategoryImp implements SvcCategory{
         try{
             repo.create(in.getCategory(), in.getTag());
         }catch(DataAccessException e){
-            if(e.getLocalizedMessage().contains("category.category"))
+            if(e.getLocalizedMessage().contains("ux_category"))
                 throw new ApiException(HttpStatus.CONFLICT,"El nombre de la categoria ya esta registrado" );
             if(e.getLocalizedMessage().contains("ux_tag"))
                 throw new ApiException(HttpStatus.CONFLICT,"El tag de la categoria ya esta registrado" );
             throw new DBAccessException(e);
-        }                
+        }
     }
 
     @Override

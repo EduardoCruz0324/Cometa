@@ -22,9 +22,9 @@ public interface RepoCategory extends JpaRepository<Category, Integer> {
 	List<Category> findByStatusOrderByCategory(Integer status);
 
 	@Modifying(clearAutomatically = true, flushAutomatically = true)
-	@Transactional	
+	@Transactional
 	@Query(value = "INSERT INTO category(category,tag,status) VALUES(:category,:tag,1)", nativeQuery = true)
-    void create(String category,String tag);
+    void create(@Param("category") String category, @Param("tag") String tag);
 
     @Modifying
     @Transactional
