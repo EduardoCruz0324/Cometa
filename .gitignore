@@ -1,0 +1,14 @@
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Claude / tools
+.claude/
+
+# Maven / Java basura
+target/
+*.log
+
+# OS
+.DS_Store
