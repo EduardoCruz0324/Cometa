@@ -6,11 +6,12 @@ import org.springframework.http.ResponseEntity;
 
 import com.product.api.dto.in.DtoProductIn;
 import com.product.api.dto.out.DtoProductListOut;
+import com.product.api.dto.out.DtoProductOut;
+
 public interface SvcProduct {
 
 	public ResponseEntity<List<DtoProductListOut>> getProducts();
-	//public ResponseEntity<DtoProductOut> getProduct(Integer id);
-	public ResponseEntity<DtoProductListOut> getProduct(Integer id);
+	public ResponseEntity<DtoProductOut> getProduct(Integer id);
 	public ResponseEntity<String> createProduct(DtoProductIn in);
 	public ResponseEntity<String> updateProduct(Integer id, DtoProductIn in);
 	public ResponseEntity<String> enableProduct(Integer id);

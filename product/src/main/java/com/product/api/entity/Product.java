@@ -29,7 +29,7 @@ public class Product {
 
 	@Schema(description = "Nombre del producto", example = "Laptop Lenovo IdeaPad")
 	@Column(name = "product_name")
-	private String product_name;
+	private String product;
 
 	@Schema(description = "Descripción del producto", example = "Laptop 15.6 pulgadas, 16GB RAM, 512GB SSD")
 	@Column(name = "description")
@@ -67,13 +67,12 @@ public class Product {
 		this.gtin = gtin;
 	}
 
-	//string
-	public String getProduct_name() {
-		return product_name;
+	public String getProduct() {
+		return product;
 	}
 
-	public void setProduct_name(String product) {
-		this.product_name = product;
+	public void setProduct(String product) {
+		this.product = product;
 	}
 
 	public String getDescription() {

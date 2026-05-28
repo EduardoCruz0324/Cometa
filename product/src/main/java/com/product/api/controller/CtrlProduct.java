@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.product.api.dto.in.DtoProductIn;
 import com.product.api.dto.out.DtoProductListOut;
+import com.product.api.dto.out.DtoProductOut;
 import com.product.api.service.SvcProduct;
 import com.product.exception.ApiException;
 
@@ -34,7 +35,7 @@ public class CtrlProduct {
 
     @Operation(summary = "Consultar producto", description = "Obtiene el detalle de un producto por su id")
     @GetMapping("/{id}")
-    public ResponseEntity<DtoProductListOut> getProduct(
+    public ResponseEntity<DtoProductOut> getProduct(
             @Parameter(description = "ID del producto") @PathVariable Integer id) {
         return svc.getProduct(id);
     }

@@ -1,3 +1,4 @@
+/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/Category.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/ProductApplication.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/controller/CtrlCategory.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/controller/CtrlProduct.java
@@ -18,7 +19,6 @@
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/service/SvcCategoryImp.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/service/SvcProduct.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/service/SvcProductImage.java
-/home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/service/SvcProductImageImp.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/api/service/SvcProductImp.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/common/mapper/MapperProduct.java
 /home/zyann28/Documentos/Backend/Cometa/product/src/main/java/com/product/config/jwt/JwtAuthFilter.java
