@@ -54,14 +54,14 @@ public class CtrlCategory {
         return ResponseEntity.ok().build();
     }
 
-	@PatchMapping("/{id}/enable")
+	@PatchMapping("/{id}/enable") 
 	public ResponseEntity<String> enable(@PathVariable Integer id){
 		svc.enable(id);
 		System.out.println("ID: "+id);
 		return ResponseEntity.ok().body("Categoría activada");
 	}
 
-	@PatchMapping("/{id}/disable")
+	@PatchMapping("/{id}/disable") //sirve como endpoint delete
 	public ResponseEntity<String> disable(@PathVariable Integer id){
 		svc.disable(id);
 		System.out.println("ID: "+id);
