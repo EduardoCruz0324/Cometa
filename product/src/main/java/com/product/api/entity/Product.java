@@ -24,7 +24,7 @@ public class Product {
 	private String gtin;
 
 	@Column(name = "product_name")
-	private String product_name;
+	private String product;
 
 	@Column(name = "description")
 	private String description;
@@ -57,13 +57,12 @@ public class Product {
 		this.gtin = gtin;
 	}
 
-	//string
-	public String getProduct_name() {
-		return product_name;
+	public String getProduct() {
+		return product;
 	}
 
-	public void setProduct_name(String product) {
-		this.product_name = product;
+	public void setProduct(String product) {
+		this.product = product;
 	}
 
 	public String getDescription() {
