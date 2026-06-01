@@ -127,7 +127,7 @@ public class SvcInvoiceImp implements SvcInvoice {
 			// 4. Guardar factura con sus items (relación bidireccional: cada item apunta al invoice)
 			Invoice invoice = new Invoice();
 			invoice.setUser_id(userId);
-			invoice.setCreated_at(LocalDate.now().toString());
+			invoice.setCreated_at(LocalDate.now());
 			invoice.setTotal(invoiceTotal);
 			invoice.setTaxes(invoiceTaxes);
 			invoice.setSubtotal(invoiceSubtotal);

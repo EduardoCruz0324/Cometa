@@ -1,0 +1,17 @@
+spring:
+ application:
+   name: admin-server
+ boot:
+   admin:
+     discovery:
+       enabled: true      # LE DICES al Admin que use Eureka para descubrir tus APIs
+server:
+ port: 9090
+eureka:
+ client:
+   service-url:
+     defaultZone: http://localhost:8761/eureka  # adapta al host/puerto de tu Eureka
+   register-with-eureka: true
+   fetch-registry: true
+ instance:
+   prefer-ip-address: true

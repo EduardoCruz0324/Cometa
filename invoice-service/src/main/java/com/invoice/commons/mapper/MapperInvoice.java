@@ -19,7 +19,7 @@ public class MapperInvoice {
 			DtoInvoiceList dtoInvoice = new DtoInvoiceList(
 		            invoice.getInvoice_id(),
 		            invoice.getUser_id(),
-		            invoice.getCreated_at(),
+		            invoice.getCreated_at() != null ? invoice.getCreated_at().toString() : null,
 		            invoice.getSubtotal(),
 		            invoice.getTaxes(),
 		            invoice.getTotal()

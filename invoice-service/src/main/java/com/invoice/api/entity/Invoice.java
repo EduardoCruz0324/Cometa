@@ -1,6 +1,9 @@
 package com.invoice.api.entity;
 
+import java.time.LocalDate;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -21,7 +24,8 @@ public class Invoice {
 
 	private Integer user_id;
 
-	private String created_at;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate created_at;
 
 	private Double subtotal;
 
@@ -43,8 +47,8 @@ public class Invoice {
 	public Integer getUser_id() { return user_id; }
 	public void setUser_id(Integer user_id) { this.user_id = user_id; }
 
-	public String getCreated_at() { return created_at; }
-	public void setCreated_at(String created_at) { this.created_at = created_at; }
+	public LocalDate getCreated_at() { return created_at; }
+	public void setCreated_at(LocalDate created_at) { this.created_at = created_at; }
 
 	public Double getSubtotal() { return subtotal; }
 	public void setSubtotal(Double subtotal) { this.subtotal = subtotal; }
