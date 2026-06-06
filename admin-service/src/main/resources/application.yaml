@@ -1,0 +1,10 @@
+spring:
+ application:
+   name: admin-service
+ profiles:
+   active: dev
+ config:
+   import: "optional:configserver:"   # qué importar
+ cloud:
+   config:
+     uri: http://localhost:8888       # dónde está el config server

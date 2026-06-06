@@ -1,6 +1,0 @@
-/home/zyann28/Documentos/Backend/auth-service/auth/src/main/java/com/auth/AuthApplication.java
-/home/zyann28/Documentos/Backend/auth-service/auth/src/main/java/com/auth/api/controller/AuthController.java
-/home/zyann28/Documentos/Backend/auth-service/auth/src/main/java/com/auth/api/dto/LoginRequest.java
-/home/zyann28/Documentos/Backend/auth-service/auth/src/main/java/com/auth/api/dto/LoginResponse.java
-/home/zyann28/Documentos/Backend/auth-service/auth/src/main/java/com/auth/config/JwtUtil.java
-/home/zyann28/Documentos/Backend/auth-service/auth/src/main/java/com/auth/config/SecurityConfig.java
